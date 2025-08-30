@@ -1,6 +1,6 @@
 services:
   mysql:
-    image: loadinghtml/mysql
+    image: loadinghtml/mysql:latest
     container_name: gost-mysql
     restart: unless-stopped
     environment:
