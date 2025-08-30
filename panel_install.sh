@@ -10,8 +10,8 @@ export LC_ALL=C
 # 全局下载地址配置
 DOCKER_COMPOSEV4_URL="https://raw.githubusercontent.com/loadinghtml/flux-panel/refs/heads/main/docker-compose-v4.yml"
 DOCKER_COMPOSEV6_URL="https://raw.githubusercontent.com/loadinghtml/flux-panel/refs/heads/main/docker-compose-v6.yml"
-GOST_SQL_URL="https://raw.githubusercontent.com/bqlpfy/flux-panel/refs/heads/main/gost.sql"
-PROXY_SH_URL="https://raw.githubusercontent.com/bqlpfy/flux-panel/refs/heads/main/proxy.sh"
+GOST_SQL_URL="https://raw.githubusercontent.com/loadinghtml/flux-panel/refs/heads/main/gost.sql"
+PROXY_SH_URL="https://raw.githubusercontent.com/loadinghtml/flux-panel/refs/heads/main/proxy.sh"
 
 COUNTRY=$(curl -s https://ipinfo.io/country)
 if [ "$COUNTRY" = "CN" ]; then
@@ -165,9 +165,9 @@ generate_random() {
 delete_self() {
   echo ""
   echo "🗑️ 操作已完成，正在清理脚本文件..."
-  SCRIPT_PATH="$(readlink -f "$0" 2>/dev/null || realpath "$0" 2>/dev/null || echo "$0")"
+  # SCRIPT_PATH="$(readlink -f "$0" 2>/dev/null || realpath "$0" 2>/dev/null || echo "$0")"
   sleep 1
-  rm -f "$SCRIPT_PATH" && echo "✅ 脚本文件已删除" || echo "❌ 删除脚本文件失败"
+  # rm -f "$SCRIPT_PATH" && echo "✅ 脚本文件已删除" || echo "❌ 删除脚本文件失败"
 }
 
 
