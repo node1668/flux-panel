@@ -1,6 +1,30 @@
 #!/bin/bash
+
+# 获取系统架构
+get_architecture() {
+    ARCH=$(uname -m)
+    case $ARCH in
+        x86_64)
+            echo "amd64"
+            ;;
+        aarch64|arm64)
+            echo "arm64"
+            ;;
+        *)
+            echo "amd64"  # 默认使用 amd64
+            ;;
+    esac
+}
+
+# 构建下载地址
+build_download_url() {
+    local OS_TYPE=$(get_os_type)
+    local ARCH=$(get_architecture)
+    echo "https://github.com/loadinghtml/flux-panel/releases/download/gost/gost-linux-${OS_TYPE}"
+}
+
 # 下载地址
-DOWNLOAD_URL="https://github.com/bqlpfy/flux-panel/releases/download/gost-latest/gost"
+DOWNLOAD_URL=$(build_download_url)
 INSTALL_DIR="/etc/gost"
 COUNTRY=$(curl -s https://ipinfo.io/country)
 if [ "$COUNTRY" = "CN" ]; then
