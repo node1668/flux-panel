@@ -352,12 +352,12 @@ main() {
         exit 0
         ;;
       4)
-        block_protocol
+        echo "👋 退出脚本"
         delete_self
         exit 0
         ;;
       5)
-        echo "👋 退出脚本"
+        block_protocol
         delete_self
         exit 0
         ;;
