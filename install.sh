@@ -18,7 +18,6 @@ get_architecture() {
 
 # 构建下载地址
 build_download_url() {
-    local OS_TYPE=$(get_os_type)
     local ARCH=$(get_architecture)
     echo "https://github.com/loadinghtml/flux-panel/releases/download/gost/gost-linux-${OS_TYPE}"
 }
